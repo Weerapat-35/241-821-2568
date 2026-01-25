@@ -1,0 +1,94 @@
+/* ตั้งค่าพื้นฐาน */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* กล่องคอนเทนเนอร์หลัก */
+.container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+}
+
+/* หัวข้อ Register form */
+.header {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* จัดระเบียบแถวที่เป็น Flex */
+.flex {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* ระยะห่างของแต่ละช่องกรอก */
+.form-input {
+    margin-bottom: 15px;
+}
+
+.header-form {
+    min-width: 80px;
+    font-weight: 600;
+}
+
+/* ตกแต่งช่อง Input และ Textarea */
+.form, textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box; /* ทำให้ padding ไม่ดันขนาดความกว้างออก */
+}
+
+textarea {
+    height: 80px;
+    margin-top: 5px;
+    resize: vertical;
+}
+
+/* ตกแต่งส่วนเพศและงานอดิเรก */
+.gender {
+    margin-top: 10px;
+}
+
+.form-input div {
+    margin-bottom: 5px;
+}
+
+/* ปุ่มกด */
+.center {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
