@@ -1,0 +1,19 @@
+docker ps --all   #ดูว่ามี container อะไรอยู่บ้าง
+docker run hello-world
+docker run busybox ls 
+docker run busybox ping google.com  #ตรวจสอบว่าปลายทางมีอยู่ไหม
+docker stop CONTAINER ID  #หยุดการทำงาน
+docker pull busybox  #เอามาจากเครื่องเรา
+docker create busybox ping google.com  #สร้าง
+docker start "container id"
+docker rm ลบ
+docker system prune   #ลบ container ทั้งหมด *อันตราย*
+docker run nginx
+docker exec -it "container id" sh  #เข้าไปในcontainer
+docker exec -it "container id" bash
+cat เอาไว้ดูภายในไฟล์
+docker ru -p 80:80 nginx   #port80
+docker ru -p 9000:80 nginx  #port 9000 port ต้องไม่ซ้ำกัน คอมต้องแรง
+docker ru -d -p 9000:80 nginx #run แล้วออกเลย สามารถพิมพ์ต่อได้
+docker stop container id ทั้งหมดก็จะทำให้หยุดทั้งหมด
+docker rm contai
