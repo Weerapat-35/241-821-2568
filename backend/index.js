@@ -1,27 +1,49 @@
-const express =  require('express');
+const express = require('express');
 const bodyParser =  require('body-parser');
 const app = express();
-
+const mysql = require('mysql2/promise');
 const port = 8000
 
-app.use(bodyParser.text());
+app.use(bodyParser.json());
 let users=[]
 let counter = 1;
+
+let conn = null;
+const initDBConnection = async () =>{
+    conn = await mysql.createConnection({
+        host: 'localhost',
+        user:'root',
+        password: 'root',
+        database: 'webdb',
+        port: 8821
+    })
+}
+
+//path = GET /users สำหรับ get ข้อมูล user ทั้งหมด
+app.get('/users', async(req, res) => {
+    const result = await conn.query('SELECT * FROM users')
+    res.json(result[0]);
+})
+
+
+
+
 //path  =  /test
 app.get('/user',(req, res) => {
     res.json(users);
 });
 
 
-//path = POST /user
-app.post('/user', (req, res) => {
+
+//path = POST /user สำหรับเพิ่ม user ใหม่
+app.post('/users', async(req, res) => {
     let user = req.body;
-    users.id = counter
-    counter += 1;
-    users.push(user);
+    const results = await conn.query('INSERT INTO users SET ?', user);
+    console.log('results:', results);
     res.json({
-        message: 'User added successfully',
-        user: user });
+        message: 'User createf successfully',
+        data: results[0]
+    });
 })
 
 //path = PUT/user/:id
@@ -71,7 +93,8 @@ app.delete('user/:id', (req, res) =>{
 
 
 
-app.listen(port, () => {
+  app.listen(port, async() => {
+    await initDBConnection();
     console.log(`Server is running on port ${port}`)
 });
 
@@ -85,3 +108,45 @@ app.get('/test',(req, res) => {
     res.json(user)
 });
 */
+
+
+/*
+app.get('/testdb',(req, res) => {
+    mysql.createConnection({
+        host: 'localhost',
+        user:'root',
+        password: 'root',
+        database: 'webdb',
+        port: 8821
+    }).then((conn) => {
+        conn.query('SELECT * FROM users')
+        .then((results) => {
+            res.json(results[0]);
+        }).catch((err) => {
+            console.error(err);
+            res.status(500).json({error: 'Database query error'});
+        });
+    })
+})
+    */
+
+
+/*
+app.get('/testdb-new', async (req, res) => {
+    try{
+        const conn = await mysql.createConnection({
+        host: 'localhost',
+        user:'root',
+        password: 'root',
+        database: 'webdb',
+        port: 8821
+    })
+    const[results] = await conn.query('SELECT * FROM users')
+    res.json(results[0]);
+    }catch(err){
+        console.error(err);
+        res.status(500).json({error: 'Database query error'});
+    }
+    
+})
+    */
