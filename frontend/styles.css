@@ -1,7 +1,8 @@
-/* ตั้งค่าพื้นฐาน */
+/* ===== Professional Grey-White Theme ===== */
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f2f5;
+    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+    background: #eef1f5;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,86 +10,120 @@ body {
     margin: 0;
 }
 
-/* กล่องคอนเทนเนอร์หลัก */
+/* กล่องหลัก */
 .container {
-    background-color: white;
-    padding: 2rem;
+    background: #ffffff;
+    padding: 40px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
     width: 100%;
-    max-width: 450px;
+    max-width: 480px;
 }
 
-/* หัวข้อ Register form */
+/* หัวข้อ */
 .header {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 22px;
+    font-weight: 600;
     text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
+    margin-bottom: 30px;
+    color: #2d2d2d;
+    letter-spacing: 0.5px;
 }
 
-/* จัดระเบียบแถวที่เป็น Flex */
+/* Flex */
 .flex {
     display: flex;
-    gap: 10px;
+    gap: 14px;
     align-items: center;
 }
 
-/* ระยะห่างของแต่ละช่องกรอก */
+/* ช่องกรอก */
 .form-input {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .header-form {
-    min-width: 80px;
-    font-weight: 600;
+    min-width: 95px;
+    font-weight: 500;
+    color: #555;
 }
 
-/* ตกแต่งช่อง Input และ Textarea */
-.form, textarea {
+/* Input และ textarea */
+.form,
+textarea {
     width: 100%;
-    padding: 8px 12px;
-    border: 1px solid #ccc;
+    padding: 12px 14px;
+    border: 1px solid #dcdfe6;
     border-radius: 6px;
-    box-sizing: border-box; /* ทำให้ padding ไม่ดันขนาดความกว้างออก */
+    background: #ffffff;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/* Focus แบบมืออาชีพ */
+.form:focus,
+textarea:focus {
+    border-color: #7a7f87;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+.message{
+    background-color: rgb(196, 176, 133);
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    display: none;
+}
+
+.message.success{
+    background-color: greenyellow;
+    color: #2d2d2d;
+    size: 20pt;
+    display: block;
+}
+
+.message.danger{
+    background-color: red;
+    color:#eef1f5;
+    display: block;
 }
 
 textarea {
-    height: 80px;
-    margin-top: 5px;
+    height: 100px;
+    margin-top: 6px;
     resize: vertical;
 }
 
-/* ตกแต่งส่วนเพศและงานอดิเรก */
+/* เพศ / งานอดิเรก */
 .gender {
-    margin-top: 10px;
+    margin-top: 12px;
+    color: #444;
 }
 
 .form-input div {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
-/* ปุ่มกด */
+/* ปุ่ม */
 .center {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .button {
-    background-color: #007bff;
-    color: white;
+    background: #4a4f57;
+    color: #ffffff;
     border: none;
-    padding: 10px 25px;
+    padding: 12px 35px;
     border-radius: 6px;
+    font-size: 15px;
+    font-weight: 500;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    transition: 0.2s ease;
 }
 
 .button:hover {
-    background-color: #0056b3;
+    background: #2f3237;
 }
