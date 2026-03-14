@@ -22,12 +22,14 @@ const initDBConnection = async () =>{
     })
 }
 
+/*
 app.get('/users', async(req, res) => {
     const result = await conn.query('SELECT * FROM users')
     res.json(result[0]);
 })
+*/
 
-/*
+
 //path = GET /users สำหรับ get ข้อมูล user ทั้งหมด
 app.get('/users/:id', async(req, res) => {
     try{
@@ -47,7 +49,7 @@ app.get('/users/:id', async(req, res) => {
         });    
         }
     });
-    */
+    
     
 const validateData = (userData) => {
     let errors = [];
